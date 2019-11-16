@@ -10,9 +10,14 @@ export class HomePage {
   inputtext: string;
   key: string = 'username';
 
-  constructor(public navCtrl: NavController,
-    private storage: Storage) {
+  constructor(public navCtrl: NavController, private storage: Storage) {
+ // set a key/value
+ storage.set('name', 'Max');
 
+ // Or to get a key/value pair
+ storage.get('age').then((val) => {
+   console.log('Your age is', val);
+ });
   }
   saveData(){
     this.storage.set(this.key,this.inputtext)
