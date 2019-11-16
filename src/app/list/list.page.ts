@@ -27,7 +27,7 @@ export class ListPage implements OnInit {
         note: 'This is item #' + i,
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
       });
-    }
+    
   }
 
   ngOnInit() {
