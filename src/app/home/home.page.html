@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-item>
+      <ion-input [(ngModel)]="inputtext" placeholder="Type your value"></ion-input>
+    </ion-item>
+    <button ion-button (click)="saveData()">Save data</button>
+    <button ion-button (click)="loadData()">load data</button>
+  
+</ion-content>
