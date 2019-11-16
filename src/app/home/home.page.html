@@ -1,20 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
     <ion-title>
-      Home
+      Ionic 4 Native Storage
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content padding>
-  
-  <ion-item>
-      <ion-input [(ngModel)]="inputtext" placeholder="Type your value"></ion-input>
-    </ion-item>
-    <button ion-button (click)="saveData()">Save data</button>
-    <button ion-button (click)="loadData()">load data</button>
-   
+  Saved Keys!
+ 
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <strong>String</strong>
+      </ion-col>
+      <ion-col>:
+        {{data.name}}<ion-icon name="trash" (click)="removeKey('name')"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <strong>Integer</strong>
+      </ion-col>
+      <ion-col>:
+        {{data.phone}}<ion-icon name="trash" (click)="removeKey('phone')"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <strong>JSON Object</strong><ion-icon name="trash" (click)="removeKey('offices')"></ion-icon>
+            <ion-card *ngFor="let item of data.offices; let i = index">
+                <ion-card-header>
+                    <ion-card-title>Office {{i+1}}
+                    </ion-card-title>
+                </ion-card-header>
+              <ion-card-content>
+                <p><strong>Country</strong>: {{item.country}}</p>
+                <p><strong>Address</strong>: {{item.address}}</p>
+                <p><strong>Phone</strong>: {{item.phone}}</p>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+ 
+  <ion-button size="small" (click)="driverUsed()">Get Storage Driver Used</ion-button>
+  <ion-button size="small" (click)="traverseKeys()">Loop through All Stored Keys</ion-button>
+  <ion-button size="small" (click)="listKeys()">Get Stored Keys</ion-button>
+  <ion-button size="small" (click)="getKeyLength()">Get Length Stored Keys</ion-button>
+ 
+ 
 </ion-content>
