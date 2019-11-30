@@ -14,9 +14,9 @@ export class HomePage {
   ) {
     this.data = {};
     //Set String Value
-    this.setValue("name", "Freaky Jolly");
+    this.setValue("name", "Aureliano");
     //Set Integer Value
-    this.setValue("phone", 8908904);
+    this.setValue("phone", '(31)996823040');
  
     let sampleObj = [
       {
